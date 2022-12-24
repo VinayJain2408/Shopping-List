@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping</title>
+    <link rel="stylesheet" href="shopping.css">
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h2> <i class="fa-solid fa-cart-shopping"></i>Shopping List</h2>
+        </header>
+        <div class="menu">
+            <form action="">
+                <label for="">Section</label><br>
+                <select id="" required>
+                    <option value="" selected disabled>Category</option>
+                    <option value="Fruits-Vegetables">Fruits-Vegetable</option>
+                    <option value="Meat-Seafood">Meat-Seafood</option>
+                    <option value="Dairy">Dairy</option>
+                    <option value="Frozen-Foods">Frozen-Foods</option>
+                    <option value="Breads-Paste">Breads-Paste</option>
+                    <option value="Snacks">Snacks</option>
+                    <option value="Beverages">Beverages</option>
+                    <option value="Cleaning">Cleaning</option>
+                    <option value="Others">Others</option>
+                </select>
+                <label for="">Quantity</label>
+                <input type="text" class="quantity" required><br>
+                <label for="">Name</label>
+                <input type="text" class="name" required><br>
+
+                <!-- <button>Add to Cart</button> -->
+                <input type="submit" value="Add to Cart">
+            </form>
+
+        </div>
+
+
+        <div class="contents">
+            <div class="fruits-Vegetables">
+                <div class="box">
+                    <h2>fruits & Vegetables</h2>
+                </div>
+                <div class="tab"></div>
+            </div>
+
+            <div class="Meat-Seafood">
+                <div class="box">
+                    <h2>Meat-Seafood</h2>
+                </div>
+                <div class="tab"></div>
+            </div>
+
+            <div class="Dairy">
+                <div class="box">
+                    <h2>Dairy</h2>
+                </div>
+                <div class="tab"></div>
+            </div>
+
+            <div class="Frozen-Foods">
+                <div class="box">
+                    <h2>Frozen-Foods</h2>
+                </div>
+                <div class="tab"></div>
+            </div>
+
+            <div class="Breads-Paste">
+                <div class="box">
+                    <h2>Breads-Paste</h2>
+                </div>
+                <div class="tab"></div>
+            </div>
+
+            <div class="Snacks">
+                <div class="box">
+                    <h2>Snacks</h2>
+                </div>
+                <div class="tab"></div>
+            </div>
+
+            <div class="Beverages">
+                <div class="box">
+                    <h2>Beverages</h2>
+                </div>
+                <div class="tab"></div>
+            </div>
+
+            <div class="Cleaning">
+                <div class="box">
+                    <h2>Cleaning</h2>
+                </div>
+                <div class="tab"></div>
+            </div>
+
+            <div class="Others">
+                <div class="box">
+                    <h2>Others</h2>
+                </div>
+                <div class="tab"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <script>
+        let form = document.querySelector("form")
+        form.onsubmit = (e)=>{
+            e.preventDefault()
+            let select = document.querySelector("select") 
+            let quant = document.querySelector(".quantity") 
+            let name = document.querySelector(".name") 
+            let tab = document.querySelector(".tab") 
+
+             
+            let para = document.createElement("p")
+            para.classList.add('tab')
+
+            let nameText = document.createElement("span")
+            nameText.innerText = name.value
+            para.appendChild(nameText)
+
+            let QuantityText = document.createElement("span")
+            QuantityText.innerText = quant.value
+            para.appendChild(nameText)
+
+            document.querySelector(".contents ." + select.value + " .tab").appendChild(para)
+        }
+    </script>
+</body>
+
+</html>
